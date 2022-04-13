@@ -37,6 +37,8 @@ class MainAssets {
   static const String username = '$_baseImagePath/icons/username_icon.png';
   static const String headset = '$_baseImagePath/icons/headset_icon.png';
   static const String close = '$_baseImagePath/icons/close_icon.png';
+  static const String wishlist = '$_baseImagePath/icons/wishlist_icon.png';
+  static const String buttonChat = '$_baseImagePath/icons/button_chat.png';
 
   // Illustration
 

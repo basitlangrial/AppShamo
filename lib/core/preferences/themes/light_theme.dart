@@ -66,12 +66,12 @@ class LightTheme extends BaseTheme {
     );
 
     return InputDecorationTheme(
-      filled: true,
-      fillColor: Colors.white,
-      contentPadding: const EdgeInsets.symmetric(
-        vertical: Dimens.dp12,
-        horizontal: Dimens.dp16,
-      ),
+      // filled: true,
+      // fillColor: Colors.white,
+      // contentPadding: const EdgeInsets.symmetric(
+      //   vertical: Dimens.dp12,
+      //   horizontal: Dimens.dp16,
+      // ),
       enabledBorder: baseBorder,
       disabledBorder: baseBorder,
       border: baseBorder,

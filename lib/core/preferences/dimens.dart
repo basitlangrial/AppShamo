@@ -38,6 +38,8 @@ class Dimens {
   static const double dp48 = 48;
   static const double dp50 = 50;
   static const double dp54 = 54;
+  static const double dp60 = 60;
+  static const double dp64 = 64;
   static const double dp70 = 70;
   static const double dp74 = 74;
   static const double dp75 = 75;
@@ -47,13 +49,16 @@ class Dimens {
   static const double dp120 = 120;
   static const double dp125 = 125;
   static const double dp150 = 150;
+  static const double dp155 = 155;
   static const double dp175 = 175;
   static const double dp200 = 200;
   static const double dp215 = 215;
+  static const double dp230 = 230;
   static const double dp250 = 250;
   static const double dp255 = 255;
   static const double dp278 = 278;
   static const double dp300 = 300;
+  static const double dp310 = 310;
   static const double dp400 = 400;
   static const double dp500 = 500;
   static const double dp600 = 600;

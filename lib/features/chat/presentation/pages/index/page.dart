@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/core/core.dart';
+import 'package:flutter_starter/features/chat/presentation/pages/index/widget.dart';
 
 class DetailChatPage extends StatelessWidget {
   const DetailChatPage({Key? key}) : super(key: key);
@@ -149,10 +150,29 @@ class DetailChatPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: Dimens.defaultMargin,
+        ),
+        children: const [
+          ChatBubble(
+            isSender: true,
+            hasProduct: true,
+            text: 'Hi, this item is still available?',
+          ),
+          ChatBubble(
+            text: 'Good night, This item is only available in size 42 and 43',
+          ),
+        ],
+      );
+    }
+
     return Scaffold(
       backgroundColor: AppColors.bgColor3,
       appBar: header(),
       bottomNavigationBar: chatInput(),
+      body: content(),
     );
   }
 }

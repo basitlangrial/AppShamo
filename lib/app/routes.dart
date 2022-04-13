@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/features/chat/chat.dart';
 import 'package:flutter_starter/features/home/home.dart';
 import 'package:flutter_starter/features/login/login.dart';
+import 'package:flutter_starter/features/product/product.dart';
+import 'package:flutter_starter/features/profile/profile.dart';
 import 'package:flutter_starter/features/register/register.dart';
 // import 'package:flutter_starter/features/settings/settings.dart';
 import 'package:go_router/go_router.dart';
@@ -36,6 +38,18 @@ class AppRouter {
       GoRoute(
         path: '/chat',
         builder: (context, state) => const DetailChatPage(),
+      ),
+
+      // Register Module
+      GoRoute(
+        path: '/profile/edit',
+        builder: (context, state) => const EditProfilePage(),
+      ),
+
+      // Register Module
+      GoRoute(
+        path: '/product',
+        builder: (context, state) => const ProductPage(),
       ),
 
       // Settings Module
