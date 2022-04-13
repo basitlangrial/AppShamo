@@ -1,3 +1,6 @@
+# App Shamo
+A Application Ecommerce Shamo by the [Doni Mulya Syahputra][github_link].
+
 # Flutter Starter
 
 [![Wisnuwiry][logo]][website_link]
@@ -236,3 +239,4 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 [android_preview]: https://i.ibb.co/qNWSJ6K/android-preview.png
 [ios_preview]: https://i.ibb.co/613Gmx8/ios-preview.png
 [web_preview]: https://i.ibb.co/Y0dY43m/web-preview.png
+[github_link]: https://github.com/donisaputra00
