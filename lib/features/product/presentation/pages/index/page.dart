@@ -3,6 +3,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_starter/app/routes.dart';
 import 'package:flutter_starter/core/core.dart';
 
 class ProductPage extends StatefulWidget {
@@ -32,9 +33,89 @@ class _ProductPageState extends State<ProductPage> {
   ];
 
   int currentIndex = 0;
+  bool isWishlist = false;
 
   @override
   Widget build(BuildContext context) {
+    Future<void> showSuccessDialog() async {
+      return showDialog(
+        context: context,
+        builder: (BuildContext context) => SizedBox(
+          width: Dimens.width(context) - (2 * Dimens.defaultMargin),
+          child: AlertDialog(
+            backgroundColor: AppColors.bgColor3,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Dimens.dp30),
+            ),
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Icon(
+                        Icons.close,
+                        color: AppColors.primaryTextColor,
+                      ),
+                    ),
+                  ),
+                  Image.asset(
+                    MainAssets.success,
+                    width: Dimens.dp100,
+                  ),
+                  const SizedBox(
+                    height: Dimens.dp12,
+                  ),
+                  Text(
+                    'Hurray :)',
+                    style: AppTextStyle.primaryTextStyle.copyWith(
+                      fontSize: Dimens.dp18,
+                      fontWeight: AppTextStyle.semiBold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: Dimens.dp12,
+                  ),
+                  Text(
+                    'Item added successfully',
+                    style: AppTextStyle.secondTextStyle,
+                  ),
+                  const SizedBox(
+                    height: Dimens.dp20,
+                  ),
+                  SizedBox(
+                    width: Dimens.dp155,
+                    height: Dimens.dp44,
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: AppColors.primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(Dimens.dp24),
+                        ),
+                      ),
+                      onPressed: () {
+                        AppRouter.router.push('/cart');
+                      },
+                      child: Text(
+                        'View My Cart',
+                        style: AppTextStyle.primaryTextStyle.copyWith(
+                          fontSize: Dimens.dp16,
+                          fontWeight: AppTextStyle.medium,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarIconBrightness: Brightness.dark,
@@ -88,7 +169,7 @@ class _ProductPageState extends State<ProductPage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    AppRouter.router.push('/home');
                   },
                   child: const Icon(
                     Icons.chevron_left,
@@ -181,9 +262,37 @@ class _ProductPageState extends State<ProductPage> {
                       ],
                     ),
                   ),
-                  Image.asset(
-                    MainAssets.love,
-                    width: Dimens.dp46,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isWishlist = !isWishlist;
+                      });
+                      if (isWishlist) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            backgroundColor: AppColors.secondColor,
+                            content: Text(
+                              'Has been added to the wishlist',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            backgroundColor: AppColors.alertColor,
+                            content: Text(
+                              'Has been removed from the wishlist',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    child: Image.asset(
+                      isWishlist ? MainAssets.loveActive : MainAssets.love,
+                      width: Dimens.dp46,
+                    ),
                   ),
                 ],
               ),
@@ -291,12 +400,17 @@ class _ProductPageState extends State<ProductPage> {
               margin: const EdgeInsets.all(Dimens.defaultMargin),
               child: Row(
                 children: [
-                  Container(
-                    width: Dimens.dp54,
-                    height: Dimens.dp54,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(MainAssets.buttonChat),
+                  GestureDetector(
+                    onTap: () {
+                      AppRouter.router.push('/chat');
+                    },
+                    child: Container(
+                      width: Dimens.dp54,
+                      height: Dimens.dp54,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(MainAssets.buttonChat),
+                        ),
                       ),
                     ),
                   ),
@@ -307,7 +421,7 @@ class _ProductPageState extends State<ProductPage> {
                     child: SizedBox(
                       height: Dimens.dp54,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: showSuccessDialog,
                         style: TextButton.styleFrom(
                           primary: AppColors.primaryTextColor,
                           shape: RoundedRectangleBorder(

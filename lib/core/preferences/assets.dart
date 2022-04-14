@@ -39,6 +39,8 @@ class MainAssets {
   static const String close = '$_baseImagePath/icons/close_icon.png';
   static const String wishlist = '$_baseImagePath/icons/wishlist_icon.png';
   static const String buttonChat = '$_baseImagePath/icons/button_chat.png';
+  static const String trash = '$_baseImagePath/icons/trash.png';
+  static const String line = '$_baseImagePath/icons/line.png';
 
   // Illustration
 

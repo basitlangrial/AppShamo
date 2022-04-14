@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/features/cart/cart.dart';
 import 'package:flutter_starter/features/chat/chat.dart';
+import 'package:flutter_starter/features/checkout/checkout.dart';
 import 'package:flutter_starter/features/home/home.dart';
 import 'package:flutter_starter/features/login/login.dart';
 import 'package:flutter_starter/features/product/product.dart';
@@ -34,22 +36,38 @@ class AppRouter {
         builder: (context, state) => const RegisterPage(),
       ),
 
-      // Register Module
+      // Chat Module
       GoRoute(
         path: '/chat',
         builder: (context, state) => const DetailChatPage(),
       ),
 
-      // Register Module
+      // Profile Module
       GoRoute(
         path: '/profile/edit',
         builder: (context, state) => const EditProfilePage(),
       ),
 
-      // Register Module
+      // Product Module
       GoRoute(
         path: '/product',
         builder: (context, state) => const ProductPage(),
+      ),
+
+      // Cart Module
+      GoRoute(
+        path: '/cart',
+        builder: (context, state) => const CartPage(),
+      ),
+
+      // Checkout Module
+      GoRoute(
+        path: '/checkout',
+        builder: (context, state) => const CheckoutPage(),
+      ),
+      GoRoute(
+        path: '/checkout/success',
+        builder: (context, state) => const CheckoutSuccessPage(),
       ),
 
       // Settings Module

@@ -1,5 +1,7 @@
-# App Shamo
-A Application Ecommerce Shamo by the [Doni Mulya Syahputra][github_link].
+# App Shamo - Shoes Store (Full-Stack Laravel Flutter)
+
+A Example Application Ecommerce - Shoes Store by [Doni Mulya Syahputra][github_link].
+Welcome and enjoy my code for your study progress. For boilerplate, i'm using Flutter Starter by [Wisnu G. Saputra][website_link].
 
 # Flutter Starter
 

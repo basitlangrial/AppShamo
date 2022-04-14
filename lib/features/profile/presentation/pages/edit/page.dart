@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_starter/core/core.dart';
 
 class EditProfilePage extends StatelessWidget {
@@ -6,6 +7,7 @@ class EditProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.restoreSystemUIOverlays();
     PreferredSizeWidget header() {
       return AppBar(
         backgroundColor: AppColors.bgColor1,

@@ -22,6 +22,7 @@ class App extends StatelessWidget {
             AppConfig.transparentStatusBar ? Colors.transparent : null,
         systemNavigationBarColor:
             AppConfig.transparentStatusBar ? AppColors.bgColor1 : null,
+        statusBarIconBrightness: Brightness.light,
       ),
     );
 

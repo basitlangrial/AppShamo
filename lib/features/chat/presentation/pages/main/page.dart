@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_starter/core/core.dart';
 import 'package:flutter_starter/features/chat/presentation/pages/main/widget.dart';
 
@@ -7,6 +8,7 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.restoreSystemUIOverlays();
     Widget header() {
       return AppBar(
         backgroundColor: AppColors.bgColor1,

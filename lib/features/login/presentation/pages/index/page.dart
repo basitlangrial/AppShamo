@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_starter/app/routes.dart';
 import 'package:flutter_starter/core/core.dart';
 
@@ -12,6 +13,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.restoreSystemUIOverlays();
     Widget header() {
       return Container(
         margin: const EdgeInsets.only(

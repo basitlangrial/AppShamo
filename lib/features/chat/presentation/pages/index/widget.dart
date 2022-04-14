@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_starter/core/core.dart';
 
 class ChatBubble extends StatelessWidget {
@@ -15,6 +16,7 @@ class ChatBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.restoreSystemUIOverlays();
     Widget productPreview() {
       return Container(
         width: Dimens.dp230,

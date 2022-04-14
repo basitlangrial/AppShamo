@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_starter/core/core.dart';
 import 'package:flutter_starter/features/chat/presentation/pages/index/widget.dart';
 
@@ -7,6 +8,7 @@ class DetailChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.restoreSystemUIOverlays();
     PreferredSize header() {
       return PreferredSize(
         preferredSize: const Size.fromHeight(Dimens.dp70),

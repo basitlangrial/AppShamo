@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_starter/app/routes.dart';
 import 'package:flutter_starter/core/core.dart';
 import 'package:flutter_starter/features/chat/chat.dart';
 import 'package:flutter_starter/features/home/home.dart';
@@ -17,9 +19,16 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.light,
+      ),
+    );
     Widget cartButton() {
       return FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          AppRouter.router.push('/cart');
+        },
         backgroundColor: AppColors.secondColor,
         child: Image.asset(
           MainAssets.cart,
